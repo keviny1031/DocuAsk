@@ -1,6 +1,6 @@
 # DocuAsk
 
-DocuAsk is a simple web application that allows you to upload a PDF document and ask questions about its content. The PDF is broken into chunks, embedded with a sentence-transformer model and indexed with the FAISS vector database. When you ask a question, the most relevant text chunks are retrieved and sent to a locally running LLM via [Ollama](https://github.com/ollama/ollama) to generate a concise answer.
+DocuAsk is a web application that allows you to upload a PDF document and ask questions about its content. The PDF is broken into chunks, embedded with a sentence-transformer model and indexed with the FAISS vector database. When you ask a question, the most relevant text chunks are retrieved and sent to a locally running LLM via [Ollama](https://github.com/ollama/ollama) to generate a concise answer.
 
 ## Features
 
