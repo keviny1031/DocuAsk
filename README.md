@@ -1,6 +1,6 @@
 # DocuAsk
 
-DocuAsk is a simple web application that allows you to upload a PDF document and ask questions about its content. The PDF is broken into chunks, embedded with a sentence-transformer model and indexed with FAISS. When you ask a question, the most relevant text chunks are retrieved and sent to a locally running LLM via [Ollama](https://github.com/ollama/ollama) to generate a concise answer.
+DocuAsk is a simple web application that allows you to upload a PDF document and ask questions about its content. The PDF is broken into chunks, embedded with a sentence-transformer model and indexed with the FAISS vector database. When you ask a question, the most relevant text chunks are retrieved and sent to a locally running LLM via [Ollama](https://github.com/ollama/ollama) to generate a concise answer.
 
 ## Features
 
@@ -12,11 +12,11 @@ DocuAsk is a simple web application that allows you to upload a PDF document and
 ## Tech Stack
 
 - **Python & Flask** – web framework and API routes (`app.py`).
-- **PyMuPDF** via `langchain_community.document_loaders.PyMuPDFLoader` – reads PDF files.
 - **Sentence Transformers** – generates embeddings (`all-MiniLM-L6-v2`).
-- **FAISS** – in-memory vector index for similarity search.
-- **Ollama** – runs the LLM (`llama3`) locally for question answering.
-- **HTML/CSS/JavaScript** – simple front‑end located in `templates/` and `static/`.
+- **Ollama LLM** – runs the LLM (`llama3`) locally for question answering.
+- **FAISS Vector Database** – in-memory vector index for similarity search.
+- **PyMuPDF** via `langchain_community.document_loaders.PyMuPDFLoader` – reads PDF files.
+- **HTML/CSS/JS** – simple front‑end located in `templates/` and `static/`.
 
 ## Getting Started
 
