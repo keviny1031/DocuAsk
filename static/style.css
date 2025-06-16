@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+  padding: 40px;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#response {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#spinner {
+  font-style: italic;
+  color: #666;
+  margin-top: 10px;
+}
+
+#uploaded-filename {
+  font-weight: bold;
+  margin-top: 10px;
+}

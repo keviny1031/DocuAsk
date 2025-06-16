@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Q&A</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Ask Your PDF</h1>
+
+    <!-- Upload Form -->
+    <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+      <input type="file" name="pdf" id="pdf-input" accept=".pdf" required>
+      <button type="submit">Upload PDF</button>
+    </form>
+
+    <p id="uploaded-filename">
+      {% if filename %}
+        Uploaded: {{ filename }}
+      {% else %}
+        No file uploaded yet.
+      {% endif %}
+    </p>
+
+    <!-- Question Form -->
+    <form id="question-form">
+      <input type="text" name="question" placeholder="Enter your question..." required>
+      <button type="submit">Ask</button>
+    </form>
+
+    <!-- Spinner -->
+    <div id="spinner" style="display: none;">Thinking...</div>
+
+    <!-- Response -->
+    <div id="response"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("question-form");
+    const responseDiv = document.getElementById("response");
+    const spinner = document.getElementById("spinner");
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      spinner.style.display = "block";
+      responseDiv.innerText = "";
+
+      const formData = new FormData(form);
+      const question = formData.get("question");
+
+      try {
+        const res = await fetch("/ask", {
+          method: "POST",
+          body: new URLSearchParams({ question }),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        });
+
+        const data = await res.json();
+        responseDiv.innerText = "Answer: " + data.answer;
+      } catch (err) {
+        responseDiv.innerText = "Error: Could not get a response.";
+      } finally {
+        spinner.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
