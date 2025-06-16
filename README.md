@@ -41,5 +41,3 @@ templates/      - HTML template(s)
 static/         - CSS for the web UI
 README.md       - project documentation
 ```
-
-Feel free to modify or extend the application to suit your own PDF question-answering needs.
