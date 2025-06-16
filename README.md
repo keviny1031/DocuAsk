@@ -12,10 +12,10 @@ DocuAsk is a web application that allows you to upload a PDF document and ask qu
 ## Tech Stack
 
 - **Python & Flask** – web framework and API routes (`app.py`).
-- **Sentence Transformers** – generates embeddings (`all-MiniLM-L6-v2`).
+- **Sentence Transformers** – generates vector embeddings (`all-MiniLM-L6-v2`).
 - **Ollama LLM** – runs the LLM (`llama3`) locally for question answering.
-- **FAISS Vector Database** – in-memory vector index for similarity search.
-- **PyMuPDF** via `langchain_community.document_loaders.PyMuPDFLoader` – reads PDF files.
+- **FAISS Vector Database** – in-memory vector index for cosine similarity search.
+- **PyMuPDF** via `langchain_community.document_loaders.PyMuPDFLoader` – reads and processes PDF files.
 - **HTML/CSS/JS** – simple front‑end located in `templates/` and `static/`.
 
 ## Getting Started
